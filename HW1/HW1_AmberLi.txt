@@ -1,6 +1,13 @@
 Answers to the following questions in a plain text file
 
-1. Name one advantage to using github and one advantage to using the cpanel hosting (these need to be different)?
+1. Name one advantage to use GitHub and one advantage to using the CPanel hosting (these need to be different)?
+One advantage of GitHub is that users don't need to download an extra FTP app to host a website.
+One advantage of Cpanel is that it is simple to navigate because it usually comes with an icon-based menu.
 
-Which type of hosting do you prefer and why?
-What was the most satisfying part of this assignment?
+
+2. Which type of hosting do you prefer and why?
+I prefer GitHub because after the user links the repository to a local file, it will remind the user to fetch all the changes in GitHub Desktop.
+
+
+3. What was the most satisfying part of this assignment?
+The most satisfying part of this assignment is opening the HTML that I wrote for the first time.
