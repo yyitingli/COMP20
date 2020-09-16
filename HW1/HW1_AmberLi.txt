@@ -1,0 +1,6 @@
+Answers to the following questions in a plain text file
+
+1. Name one advantage to using github and one advantage to using the cpanel hosting (these need to be different)?
+
+Which type of hosting do you prefer and why?
+What was the most satisfying part of this assignment?
