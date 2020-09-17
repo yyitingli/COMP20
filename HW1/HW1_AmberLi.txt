@@ -1,3 +1,7 @@
+Name: Amber Li
+GitHub: https://yyitingli.github.io/COMP20/HW1/index.html
+CPanel: https://amberli.000webhostapp.com/HW1/index.html
+
 Answers to the following questions in a plain text file
 
 1. Name one advantage to use GitHub and one advantage to using the CPanel hosting (these need to be different)?
