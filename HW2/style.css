@@ -1,0 +1,64 @@
+h1 {
+    font-size: 90px;  color : #fff; display: inline-block;
+}
+
+p {
+    font-size: 35px; display: inline-block; color : #fff;
+}
+ul{
+    font-size: 30px; display: inline-block; color : #fff;
+}
+h2 {
+    font-size: 30px;  color : #fff; border: 1px solid #fff;
+    box-sizing:border-box; text-align:  right;
+}
+a {
+    text-decoration:none; color: inherit
+}
+hr {
+    height: 10px;  background-color: #fff; border: none;
+}
+body {
+    background-color: #7cb3cf
+}
+.monospace {
+    font-family: "Lucida Console", Courier, monospace;
+}
+.displayed {
+    display: block;margin-left: auto; margin-right: auto
+}
+
+address{
+     color : #fff;font-size: 25px;
+     margin-left: 45px;
+}
+.logo {
+    float: left;
+}
+
+form{
+    box-sizing: border-box;color: #fff;  display: block;width: auto;
+    float: center;font-size: 25px; margin-left: 30px;
+}
+
+form label{
+    text-align: left;
+}
+
+form input[type=text] {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.menu {
+    float:right; color: #fff;font-size: 30px;
+}
+.menu a {
+    display:block; width:60; visibility:hidden;
+}
+.menu:hover a {
+    display:block; width:60; visibility:visible;
+    border: 1px solid #b3e6ff; color: #fff ;
+    background-color: #00334d
+}
