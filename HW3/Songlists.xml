@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="xml_style.css"?>
+<song_lists >
+   <song_list id="0001">
+      <cover_name>Korean Music </cover_name>
+      <song id="0001001">
+          <artist>IU</artist>
+          <title>Bbibbi</title>
+          <genre>Alt-R&amp;B</genre>
+          <release_year> 2018 </release_year>
+      </song>
+      <song id="0001002">
+          <artist>Kim Hyun-a</artist>
+          <title>Flower Shower</title>
+          <genre>K-Pop</genre>
+          <release_year> 2019 </release_year>
+      </song>
+      <song id="0001003">
+          <artist>G-Dragon</artist>
+          <title>Superstar</title>
+          <genre>K-Pop</genre>
+          <release_year> 2017 </release_year>
+      </song>
+      <song id="0001004">
+          <artist>Wanna One</artist>
+          <title>Beautiful</title>
+          <genre>EDM</genre>
+          <release_year> 2017 </release_year>
+      </song>
+      <song id="0001005">
+          <artist>Blackpink</artist>
+          <title>DDU-DU DDU-DU</title>
+          <genre>K-Pop</genre>
+          <release_year> 2018 </release_year>
+      </song>
+      <song id="0001006">
+          <artist>Kim Tae-yeon</artist>
+          <title>I</title>
+          <genre>R&amp;B</genre>
+          <release_year> 2015 </release_year>
+      </song>
+      <song id="0001007">
+          <artist>Hwasa</artist>
+          <title>Maria</title>
+          <genre>K-Pop</genre>
+          <release_year> 2020 </release_year>
+      </song>
+      <song id="0001008">
+          <artist>LYn</artist>
+          <title>My Destiny</title>
+          <genre>K-Pop</genre>
+          <release_year> 2015 </release_year>
+      </song>
+      <song id="0001009">
+          <artist>Hyolyn</artist>
+          <title>ONE WAY LOVE</title>
+          <genre>R&amp;B</genre>
+          <release_year> 2013 </release_year>
+      </song>
+      <song id="0001010">
+          <artist>Luna</artist>
+          <title>Free Somebody</title>
+          <genre>Electropop</genre>
+          <release_year> 2016 </release_year>
+      </song>
+   </song_list>
+
+   <song_list id="0002">
+      <cover_name>Japanese Music</cover_name>
+      <song id="0002001">
+          <artist> Kenshi Yonezu, HACHI</artist>
+          <title>Lemon</title>
+          <genre>J-Pop</genre>
+          <release_year> 2018 </release_year>
+      </song>
+      <song id="0002002">
+          <artist>Mika Nakashima</artist>
+          <title>Always</title>
+          <genre>J-Pop</genre>
+          <release_year> 2010 </release_year>
+      </song>
+      <song id="0002003">
+          <artist>Milet</artist>
+          <title>Drown</title>
+          <genre>J-Pop</genre>
+          <release_year> 2020</release_year>
+      </song>
+      <song id="0002004">
+          <artist>Hikaru Utada</artist>
+          <title>Sakura Drops</title>
+          <genre>J-Pop</genre>
+          <release_year> 2002 </release_year>
+      </song>
+      <song id="0002005">
+          <artist>Kyary Pamyu Pamyu</artist>
+          <title>Ninja Re Bang Bang</title>
+          <genre>Dance/Electronic, J-pop</genre>
+          <release_year> 2013 </release_year>
+      </song>
+
+   </song_list>
+</song_lists>
