@@ -6,7 +6,7 @@ song_lists{
 song_list{
     box-sizing: border-box;
     display : block;
-    border-bottom:  double;
+    border-bottom:  10px double;
 }
 cover_name{
     font-size: 30px;
