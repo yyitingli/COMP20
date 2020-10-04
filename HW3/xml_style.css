@@ -1,45 +1,48 @@
 
 song_lists{
     font-family: Arial;
+    text-align: center;
+    background-image: url("flower.jpg"); 
 }
 
 song_list{
     box-sizing: border-box;
     display : block;
-    border-bottom:  10px double;
+    
 }
 cover_name{
-    font-size: 30px;
+    font-size: 80px;
+    color: pink;
     font-weight : bold;
 }
 
 song {
-    font-size: 20px;
+    font-size: 30px;
     display : block;
     border-bottom: 2px dotted;
 }
 
 artist::before{
     content: "Artist(s)/Band: ";
-    font-size: 20px;
+    font-size: 30px;
     font-weight : bold;
 }
 
 title::before{
     content: "Song Title: ";
-    font-size: 20px;
+    font-size: 30px;
     font-weight : bold;
 }
 
 genre::before{
     content: "Genre: ";
-    font-size: 20px;
+    font-size: 30px;
     font-weight : bold;
 }
 
 release_year::before{
     content: "Release Year: ";
-    font-size: 20px;
+    font-size: 30px;
     font-weight : bold;
 }
 
