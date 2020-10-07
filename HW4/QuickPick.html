@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quick Pick</title>
+</head>
+<body>
+	<script language="javascript">
+		function random_pick(max_num){
+			return Math.floor(Math.random() * max_num) + 1;
+		}
+
+		function count_winning_match(quick_pick, winning){
+			var count = 0;
+			for(n = 0 ; n < 5; n ++){
+				for(i = 0; i < 5 ; i++){
+					if(quick_pick[n] == winning[i]){
+						count ++;
+						winning[i] = -1;
+					}
+				}
+			}
+			return count;
+		}
+		function display_number(arr){
+			for (n = 0; n < 5; arr ++){
+				document.write( quick_pick[n]+ " ");
+			}
+			document.write(  "<br>");
+		}
+
+		function get_winning(){
+			var end = false;
+			while(end == false){
+				var winning = prompt("Enter winning numbers separated by a space","7 17 29 35 45").split(" ");
+				var check = true;
+				for(i = 0; i < 5 ; i++){
+					if(winning[i] < 1 || winning[i] > 48){
+						check = false;
+					}
+				}
+				if(check == true){
+					end = true;
+				}
+			}
+			return winning;
+		}
+
+		function get_lucky(){
+			var end = false;
+			while(end == false){
+				var lucky = prompt("Enter lucky ball number","1");
+				var check = true;
+				if(lucky < 1 || lucky > 18){
+					check = false;
+				}
+				if(check == true){
+					end = true;
+				}
+			}
+			return lucky;
+		}
+
+
+		function get_result(quick_pick, winning, quick_pick_lucky, lucky){
+			var count = count_winning_match(quick_pick, winning);
+			switch(count){
+				case 0:
+					if (quick_pick_lucky == lucky){
+						document.write("You win! Your payout is $3")
+					}
+					else{
+						document.write("Sorry! No match!")
+					}
+					break;
+				case 1:
+					if (quick_pick_lucky == lucky){
+						document.write("You win! Your payout is $6")
+					}else{
+						document.write("Sorry! Only one matches!")
+					}
+					break;
+				case 2:
+					if (quick_pick_lucky == lucky){
+						document.write("You win! Your payout is $25")
+					}
+					else{
+						document.write("You win! Your payout is $3")
+					}
+					
+					break;
+				case 3:
+					if (quick_pick_lucky == lucky){
+						document.write("You win! Your payout is $150")
+					}
+					else{
+						document.write("You win! Your payout is $20")
+					}
+					break;
+				case 4:
+					if (quick_pick_lucky == lucky){
+						document.write("You win! Your payout is $5000")
+					}
+					else{
+						document.write("You win! Your payout is $200")
+					}
+					break;
+				case 5:
+					if (quick_pick_lucky == lucky){
+						document.write("You win! Your payout is $7,000 a WEEK for LIFE")
+					}
+					else{
+						document.write("You win! Your payout is $25,000 a YEAR for LIFE")
+					}
+					break;
+			}
+		}
+
+		var quick_pick = [random_pick(48), random_pick(48), random_pick(48), random_pick(48), random_pick(48)];
+		quick_pick.sort((a,b) => a - b);
+		document.write("The quick pick numbers are: ");
+		display_number(quick_pick);
+		
+		var quick_pick_lucky = random_pick(18);
+		document.write("The lucky ball number is " + quick_pick_lucky + "<br><br>");
+
+		var winning = get_winning();
+		winning.sort((a,b) => a - b);
+		document.write("The winning numbers are: ");
+		display_number(winning);
+
+		var lucky = get_lucky();
+		document.write("The lucky ball number is " + lucky + "<br><br>");
+
+		get_result(quick_pick, winning, quick_pick_lucky, lucky);
+		
+	</script>
+
+</body>
+</html>
