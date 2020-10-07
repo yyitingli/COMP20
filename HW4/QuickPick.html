@@ -22,8 +22,8 @@
 			return count;
 		}
 		function display_number(arr){
-			for (n = 0; n < 5; arr ++){
-				document.write( quick_pick[n]+ " ");
+			for (n = 0; n < arr.length; n ++){
+				document.write( arr[n]+ " ");
 			}
 			document.write(  "<br>");
 		}
@@ -116,10 +116,12 @@
 		}
 
 		var quick_pick = [random_pick(48), random_pick(48), random_pick(48), random_pick(48), random_pick(48)];
-		quick_pick.sort((a,b) => a - b);
 		document.write("The quick pick numbers are: ");
+		quick_pick.sort((a,b) => a - b);
 		display_number(quick_pick);
 		
+		
+
 		var quick_pick_lucky = random_pick(18);
 		document.write("The lucky ball number is " + quick_pick_lucky + "<br><br>");
 
