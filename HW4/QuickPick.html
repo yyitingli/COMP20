@@ -70,6 +70,12 @@
 
 		function get_result(quick_pick, winning, quick_pick_lucky, lucky){
 			var count = count_winning_match(quick_pick, winning);
+			document.write("There are " + count + " ball matched. <br>");
+			if(quick_pick_lucky == lucky){
+				document.write("Lucky ball matched!  <br><br>");
+			}else{
+				document.write("Lucky ball does not match.  <br><br>");
+			}
 			switch(count){
 				case 0:
 					if (quick_pick_lucky == lucky){
