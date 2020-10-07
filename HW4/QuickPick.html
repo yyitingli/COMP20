@@ -37,9 +37,13 @@
 					if(winning[i] < 1 || winning[i] > 48){
 						check = false;
 					}
+					
 				}
 				if(check == true){
 					end = true;
+				}
+				else{
+						alert("Try again...(Please Enter 5 numbers from 1 to 48)")
 				}
 			}
 			return winning;
@@ -55,6 +59,9 @@
 				}
 				if(check == true){
 					end = true;
+				}
+				else{
+					alert("Try again...(Please Enter 1 number from 1 to 18)")
 				}
 			}
 			return lucky;
