@@ -1,0 +1,137 @@
+
+
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Open Sans', Sans Serif;
+	font-weight: 600;
+}
+
+
+body{
+	font-family: 'Open Sans', Sans Serif;
+	font-weight: 400;
+	color: #545454;
+	-webkit-font-smoothing: antialiased;
+}
+
+footer {
+    font-size: 30px;  color : #fff; border: 1px solid #fff;
+    box-sizing:border-box; text-align:  right;
+}
+
+header{
+  font-family: 'Open Sans', Sans Serif;
+  background-color: #f2f2f2;
+}
+
+header .navbar { 
+	margin: 0;
+	border-radius: 0;
+	box-shadow: 0 1px 15px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+header .logo {
+  position: relative;
+  display: block;
+  width: 200px;
+  padding: 0 0 0 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header .navbar ul {
+  font-size: 0;
+}
+header .navbar ul li {
+  display: inline-block;
+}
+header .navbar ul li a {
+  display: inline-block;
+  padding: 0 30px;
+  font-size: 20px;
+  color: #333;
+  text-transform: uppercase;
+
+}
+
+header .navbar ul li li a {
+  padding: 0 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  display:block; width:60; 
+  visibility:visible;
+  color: #fff ;
+  background-color: #333
+
+}
+
+header .navbar :hover  ul li a {
+    display:block; 
+    width:60; 
+    visibility:visible;
+    border: 1px solid #333; 
+    color: #fff ;
+    background-color: #333
+}
+
+body {
+    color: #343434;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+body .info{
+  overflow-y:auto;
+}
+
+footer {
+    font-size: 20px;  color : #333; border: 1px solid #fff;
+    box-sizing:border-box; text-align:  right;
+}
+
+a {
+    text-decoration:none; color: inherit;
+}
+
+form{
+    box-sizing: border-box;
+    color: inherit; 
+    display: block;
+    width: auto;
+    float: center;
+    font-size: 25px; 
+}
+
+form label{
+    text-align: left;
+}
+
+form input[type=text] {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+form input[type=submit] {
+  color: white;
+  font: Sans Serif;
+  background-color: #333;
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+
+@media screen and (max-width: 1001px) {
+    header .logo {
+        width: 100px
+    }
+
+
+}
+
