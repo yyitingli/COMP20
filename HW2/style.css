@@ -2,6 +2,7 @@ h1 {
     font-size: 90px;  color : #fff; display: inline-block;
 }
 
+div.mybox {border: 2px #ff6600;}
 p {
     font-size: 35px; display: inline-block; color : #fff;
 }
