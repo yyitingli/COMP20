@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title> Review|Campus Mover </title>
+        <title> Review|Campus Movers </title>
         <link rel="stylesheet" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script language="javascript">
@@ -10,6 +10,13 @@
                 $('h1').fadeOut();
                 $("h1").fadeIn(1000);
             });
+            $("btnNext").click(function(){
+
+            }
+            $("btnNext").click(function(){
+
+            }
+
         </script>
          <style type = "text/css">
             p,h1{
@@ -19,7 +26,7 @@
                 margin-left: 20px;
                 font-size: 28px;
             }
-            img{
+            center img{
                 width:50%;
                 height: auto;
 
@@ -31,6 +38,10 @@
     <body>
         <script language="javascript">
             var images = ["image/review_1.JPG","image/review_2.JPG","image/review_3.JPG","image/review_4.JPG"];
+
+            function nextImage(){
+
+            }
         </script>
         
         <header >
@@ -58,10 +69,21 @@
         </header>
 
         <h1>Customer Reviews</h1>
-        <div class = "float-container">
+        <div class = "float-container" style= "margin-top :-3%">
             
             <div class = "gallery float-child">
                 <h2 style="color:#df9f9f;" >Customer images</h2>
+                <div class= "pictures">
+                    <center>
+                        <picture>
+                            <source media="(min-width:700px)" srcset="image/reivew_1.JPG">
+                            <img src="image/join_us.JPG" alt="image" height="200" >
+                
+                        </picture>
+                    </center>
+                </div>
+                <button type="button" id = 'btnNext'>Next Image</button>
+                <button type="button" id = 'btnPre'>Previous Image</button>
                 
             </div>
 
@@ -70,13 +92,14 @@
                 <h2 style="color:#df9f9f;" >Top Reviews from the United State: </h2>
                 
             </div>
+            
         </div>
         
 
 
 
         <footer>
-            <a href="index.html">Homepage &#8618 </a>
+            <button type="button" style="text-align: right; width: 10%; margin-right: 3%; "><a href="index.html">Homepage &#8618 </a></button>
         </footer>
 
     </body>
