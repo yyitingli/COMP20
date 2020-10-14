@@ -5,18 +5,9 @@
         <title> Join|Campus Mover </title>
         <link rel="stylesheet" href="style.css">
          <style type = "text/css">
-            p,h1, h3{
-                margin-left: 20px;
+            form{
+                text-align: center;
             }
-            .float-container {
-                display: flex;
-                margin-top: 70px;
-            }
-
-            .float-child {
-                flex: 1;
-                
-            } 
 
             
         </style>
@@ -53,16 +44,10 @@
                 <input type="text" id="lname" name="lname"><br/>
                 <label for="email">Email:</label><br/>
                 <input type="text" id="email" name="email"><br/>
-                <label for="Age">Age:</label><br/>
-                <input type="number" id = 'age' name="age"><br/>
+                <label for="Age">Age (minimun age is 16):</label><br/>
+                <input type="number" id = 'age' name="age"  min="16"><br/>
                
-                <br/>
-                Subject (pick all that apply):
-                    <input type="checkbox" name="chkCeramic" value="Ceramic">Ceramic
-                    <input type="checkbox" name="chkWatercolor" value="Watercolor">Watercolor
-                    <input type="checkbox" name="chkDrawing" value="Drawing">Drawing
-                <br />
-                <br/>
+                
 
                 <input type="submit" value="Submit"><br>
             </form>
