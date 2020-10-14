@@ -91,6 +91,7 @@ a {
     text-decoration:none; color: inherit;
 }
 
+
 form{
     box-sizing: border-box;
     color: inherit; 
@@ -121,13 +122,19 @@ form input[type=submit] {
   box-sizing: border-box;
 }
 
+.float-container {
+  display: flex;
+  margin-top: 70px;
+}
+
+.float-child {
+  flex: 1;
+} 
 
 @media screen and (max-width: 1001px) {
     header .logo {
         width: 100px
     }
-
-
 }
 
 
