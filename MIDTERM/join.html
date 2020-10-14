@@ -5,8 +5,21 @@
         <title> Join|Campus Mover </title>
         <link rel="stylesheet" href="style.css">
          <style type = "text/css">
+            h1{
+                margin-left: 8%;
+            }
+            h2{
+                margin-top: 20%;
+                margin-left: 8%;
+            }
             form{
-                margin-left: 30px;
+                margin-top: 3%;
+                margin-left: 10%;
+            }
+            img{
+                width:50%;
+                height: auto;
+
             }
 
             
@@ -37,25 +50,42 @@
             </div>
         </header>
 
-        <h1>become one of us</h1>
+        <div class = 'float-container'>
+            <div class = 'float-child'>
+                <h1> Join Our Team </h1>
+                <form>
 
-        <div>
-            <form>
-                    <label for="fname">First name:</label><br/>
-                    <input type="text" id="fname" name="fname"><br/>
-                    <label for="lname">Last name:</label><br/>
-                    <input type="text" id="lname" name="lname"><br/>
-                    <label for="email">Email:</label><br/>
-                    <input type="text" id="email" name="email"><br/>
-                    <label for="Age">Age (minimun age is 16):</label><br/>
-                    <input type="number" id = 'age' name="age"  min="16"><br/><br/>
-                    <label for="Resume">Upload Resume:</label>
-                    <input type="file" id="Resume" name="filename"><br/><br/>
-                    
+                        <label for="fname">First name:</label><br/>
+                        <input type="text" id="fname" name="fname" style="width: 80%;"><br/>
+                        <label for="lname">Last name:</label><br/>
+                        <input type="text" id="lname" name="lname" style="width: 80%;"><br/>
+                        <label for="email">Email:</label><br/>
+                        <input type="text" id="email" name="email"><br/>
+                        <label for="Age">Age (minimun age is 16):</label><br/>
+                        <input type="number" id = 'age' name="age"  min="16" style="width: 80%;"><br/><br/>
+                        <label for="Resume">Upload Resume:</label>
+                        <input type="file" id="Resume" name="filename"style="width: 80%;"><br/><br/>
+                        
 
-                    <input type="submit" value="Submit"><br>
+                        <input type="submit" value="Submit" style="width: 80%;"><br>
                 </form>
-        <div>
+  
+            </div>
+            <div class = 'float-child' >
+                <h2> " The future depends on what you do today."  -- Mahatma Gandhi</h2>
+                <center>
+                    <picture>
+                    <source media="(min-width:700px)" srcset="image/join_us.JPG">
+                    <img src="image/join_us.JPG" alt="image" height="200" >
+                
+                    </picture>
+                </center>
+                
+            </div>
+
+        </div>
+
+        
 
         
 
