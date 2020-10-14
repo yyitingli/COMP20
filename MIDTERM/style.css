@@ -54,16 +54,6 @@ header .navbar ul li a {
 
 }
 
-header .navbar ul li li a {
-  padding: 0 30px;
-  font-size: 20px;
-  text-transform: uppercase;
-  display:block; width:60; 
-  visibility:visible;
-  color: #fff ;
-  background-color: #333
-
-}
 
 header .navbar :hover  ul li a {
     display:block; 
