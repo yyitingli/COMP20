@@ -7,20 +7,31 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script language="javascript">
             $(document).ready(function () {
-                $("h1").fadeIn();
-                $("#div2").fadeIn("slow");
-                $("#div3").fadeIn(3000);
+                $('h1').fadeOut();
+                $("h1").fadeIn(1000);
             });
         </script>
          <style type = "text/css">
-            p,h1, h3{
+            p,h1{
                 margin-left: 20px;
+            }
+            h2{
+                margin-left: 20px;
+                font-size: 28px;
+            }
+            img{
+                width:50%;
+                height: auto;
+
             }
             
         </style>
     </head>
 
     <body>
+        <script language="javascript">
+            var images = ["image/review_1.JPG","image/review_2.JPG","image/review_3.JPG","image/review_4.JPG"];
+        </script>
         
         <header >
             <div class = 'logo' >
@@ -45,6 +56,21 @@
             </div>
 
         </header>
+
+        <h1>Customer Reviews</h1>
+        <div class = "float-container">
+            
+            <div class = "gallery float-child">
+                <h2 style="color:#df9f9f;" >Customer images</h2>
+                
+            </div>
+
+            
+            <div class = "reviews float-child">
+                <h2 style="color:#df9f9f;" >Top Reviews from the United State: </h2>
+                
+            </div>
+        </div>
         
 
 
