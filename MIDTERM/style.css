@@ -129,6 +129,16 @@ form input[type=submit] {
   box-sizing: border-box;
 }
 
+form input[type=button] {
+  color: white;
+  font: Sans Serif;
+  background-color: #333;
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
 
 .float-container {
   display: flex;
