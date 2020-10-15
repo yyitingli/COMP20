@@ -10,24 +10,18 @@
                 $('h1').fadeOut();
                 $("h1").fadeIn(1000);
             });
-            $("btnNext").click(function(){
-
-            }
-            $("btnNext").click(function(){
-
-            }
 
         </script>
          <style type = "text/css">
             p,h1{
-                margin-left: 20px;
+                margin-left: 30px;
             }
             h2{
-                margin-left: 20px;
+                margin-left: 30px;
                 font-size: 28px;
             }
             center img{
-                width:50%;
+                width: 80%;
                 height: auto;
 
             }
@@ -36,14 +30,49 @@
     </head>
 
     <body>
+        
         <script language="javascript">
             var images = ["image/review_1.JPG","image/review_2.JPG","image/review_3.JPG","image/review_4.JPG"];
+            var count = 0
 
-            function nextImage(){
+            function nextCount(){
+                if(count == images.length - 1){
+                    return 0;
+                }
+                return count +1;
+            }
+
+            function previousCount(){
+                if(count == 0){
+                    return images.length - 1;
+                }
+                return count -1;
+            }
+
+            function NextImage(){
+                count = nextCount()
+                var content = `<center> 
+                            <picture>
+                                <source media="(min-width:700px)" srcset="`+images[count]+ `">
+                                <img src="`+ images[count] +`" alt="image" height="200" >
+                            </picture>
+                            </center>`
+                document.getElementById("pictures").innerHTML = content;
+
+            }
+
+            function PreviousImage(){
+                count = previousCount()
+                var content = `<center> 
+                            <picture>
+                                <source media="(min-width:700px)" srcset="`+images[count]+ `">
+                                <img src="`+ images[count] +`" alt="image" height="200" >
+                            </picture>
+                            </center>`
+                document.getElementById("pictures").innerHTML = content;
 
             }
         </script>
-        
         <header >
             <div class = 'logo' >
                 <a href="homepage.html"><picture>
@@ -72,28 +101,39 @@
         <div class = "float-container" style= "margin-top :-3%">
             
             <div class = "gallery float-child">
-                <h2 style="color:#df9f9f;" >Customer images</h2>
-                <div class= "pictures">
+                <h2 style="color:#df9f9f;" >Customer images:</h2>
+                <div id= "pictures">
                     <center>
                         <picture>
-                            <source media="(min-width:700px)" srcset="image/reivew_1.JPG">
-                            <img src="image/join_us.JPG" alt="image" height="200" >
+                            <source media="(min-width:700px)" srcset="image/review_1.JPG">
+                            <img src="image/review_1.JPG" alt="image" height="200" >
                 
                         </picture>
                     </center>
                 </div>
-                <button type="button" id = 'btnNext'>Next Image</button>
-                <button type="button" id = 'btnPre'>Previous Image</button>
+                <button type="button " style="margin-left: 10%" onclick="NextImage() ">Next Image</button>
+                <button type="button" onclick="PreviousImage()" >Previous Image</button>
                 
             </div>
 
             
             <div class = "reviews float-child">
-                <h2 style="color:#df9f9f;" >Top Reviews from the United State: </h2>
+                <h2 style="color:#df9f9f;" >Recent Reviews from the United State: </h2>
+
+                <div id ='reviews'>
+                    
+                </div>
+                <form>
+                    <label for="email">Subscribe Form:</label><br/>
+                    <input type="text" id="email" name="email" value="Email Address"><br/>
+                    <input type="submit" class= 'submit' value="Submit" onclick="newReview()"><br>
+                </form> 
                 
             </div>
             
         </div>
+
+
         
 
 
