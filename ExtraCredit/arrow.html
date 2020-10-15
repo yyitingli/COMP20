@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Extra Credit</title>
+</head>
+<body>
+	<script language="javascript">
+		function shift(){
+			myBtn = document.getElementById('myBtn');
+			mytxt1 = document.getElementById('txt1');
+			mytxt2 = document.getElementById('txt2');
+			if(myBtn.value == "->"){
+				mytxt2.value = mytxt1.value;
+				mytxt1.value = "";
+				myBtn.value  = "<-";
+			}else{
+				mytxt1.value = mytxt2.value;
+				mytxt2.value = "";
+				myBtn.value= "->";
+
+			}
+		}
+	</script>
+	<div>
+		<form >
+ 			<input type="text" id="txt1"  value ="start">
+ 			<input type="button" id="myBtn" value = "->" onclick="shift()">
+ 			<input type="text" id="txt2" ><br><br>
+ 		</form>
+
+	</div>
+
+
+</body>
+</html>
