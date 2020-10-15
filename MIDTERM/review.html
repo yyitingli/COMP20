@@ -33,6 +33,8 @@
         
         <script language="javascript">
             var images = ["image/review_1.JPG","image/review_2.JPG","image/review_3.JPG","image/review_4.JPG"];
+            var reviews= [`<p> Campus movers is very professional. The movers arrived on time. They were efficient. </p>
+                    <p> --Andrea Kim</p><hr/>`,`<p> The movers are wonderful. They stacked everything orderly in our storage unit. </p><p> --Panda</p><hr/>`,``]
             var count = 0
 
             function nextCount(){
@@ -72,12 +74,36 @@
                 document.getElementById("pictures").innerHTML = content;
 
             }
+
+            function newReview(){
+
+                var review = "<p>"+ document.getElementById("review").value  +"</p>"+"<p>--"+ document.getElementById("Name").value+"</p><hr/>"
+
+                reviews.unshift(review);
+                reviews.pop();
+                writeReview()
+                
+                
+
+            }
+
+            function writeReview(){
+                document.getElementById("reviews").innerHTML = '';
+
+                for(n = 0; n < reviews.length; n ++){
+                    document.getElementById('reviews').innerHTML += reviews[n];
+                }
+                
+                
+            }
+
+
         </script>
         <header >
             <div class = 'logo' >
                 <a href="homepage.html"><picture>
-                <source media="(min-width:700px)" srcset="ALM.png">
-                <img src="logo.png" alt="logo" height="200" style="width:auto;" class = "logo">
+                <source media="(min-width:700px)" srcset="image/logo.png">
+                <img src="image/logo.png" alt="logo" height="200" style="width:auto;" class = "logo">
             
                 </picture></a>
 
@@ -100,7 +126,7 @@
         <h1>Customer Reviews</h1>
         <div class = "float-container" style= "margin-top :-3%">
             
-            <div class = "gallery float-child">
+            <div class = "float-child">
                 <h2 style="color:#df9f9f;" >Customer images:</h2>
                 <div id= "pictures">
                     <center>
@@ -117,16 +143,26 @@
             </div>
 
             
-            <div class = "reviews float-child">
-                <h2 style="color:#df9f9f;" >Recent Reviews from the United State: </h2>
+            <div class = "float-child">
+                <h2 style="color:#df9f9f;"> Recent Reviews from the United State: </h2>
 
                 <div id ='reviews'>
+                    <p> Campus movers is very professional. The movers arrived on time. They were efficient. </p>
+                    <p> --Andrea Kim</p><hr/>
+                    <p> The movers are wonderful. They stacked everything orderly in our storage unit. </p>
+                    <p> --Panda</p><hr/>
+                    <p> The price was the best I found in the city. </p>
+                    <p> --Fox </p><hr/>
+
+
                     
                 </div>
-                <form>
-                    <label for="email">Subscribe Form:</label><br/>
-                    <input type="text" id="email" name="email" value="Email Address"><br/>
-                    <input type="submit" class= 'submit' value="Submit" onclick="newReview()"><br>
+                <form style="font-size:20px">
+                    <label for="review">Write your review:</label><br/>
+                    <input style= 'height: 100px; width:90%' type="text" id="review" name="review" required><br/>
+                    <label  for="Name">Name:</label><br/>
+                    <input type="text" id="Name" name="Name" value="Anonymous"required><br/>
+                    <input type="button"  class= 'submit' value="Submit" onclick="newReview()"><br>
                 </form> 
                 
             </div>
