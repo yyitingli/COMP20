@@ -78,10 +78,12 @@
             function newReview(){
 
                 var review = "<p>"+ document.getElementById("review").value  +"</p>"+"<p>--"+ document.getElementById("Name").value+"</p><hr/>"
-
-                reviews.unshift(review);
-                reviews.pop();
-                writeReview()
+                if(validateForm()){
+                    reviews.unshift(review);
+                    reviews.pop();
+                    writeReview()
+                }
+                
                 
                 
 
@@ -95,6 +97,24 @@
                 }
                 
                 
+            }
+
+            function validateForm() {
+                var x = document.forms["myForm"]["Name"].value;
+                var y = document.forms["myForm"]["review"].value;
+                if (x == "" & y == "") {
+                    alert("Name and Review must be filled out");
+                    return false;
+                }
+                else if(x == ""){
+                    alert("Name must be filled out");
+                    return false;
+                }
+                else if(y == ""){
+                    alert("Review must be filled out");
+                    return false;
+                }
+                return true
             }
 
 
@@ -157,11 +177,11 @@
 
                     
                 </div>
-                <form style="font-size:20px">
+                <form  name='myForm'style="font-size:20px">
                     <label for="review">Write your review:</label><br/>
-                    <input style= 'height: 100px; width:90%;' type="text" id="review" name="review" required><br/>
+                    <input style= 'height: 100px; width:90%;' type="text" id="review" name="review"><br/>
                     <label  for="Name">Name:</label><br/>
-                    <input type="text" id="Name" name="Name" value="Anonymous"required><br/>
+                    <input type="text" id="Name" name="Name" value="Anonymous"><br/>
                     <input type="button"  class= 'submit' value="Submit" onclick="newReview()"><br>
                 </form> 
                 
