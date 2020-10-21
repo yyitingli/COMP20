@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	<!--
+-Create a page with 5 checkboxes- by default, all are unchecked 
+-The first checkbox is labeled:  “Check All”
+When “Check All” is checked, check all other boxes and change the label to “Uncheck All”.  If it is subsequently unchecked, uncheck all other checkboxes and restore the label to “Check All”.
+- When any other checkbox is checked, it should toggle.
+-->
+<script language="javascript">
+checkLabels = ["1st", "second","third","fourth"];
+window.onload = function() {
+	/*document.forms[0].chx.onclick= function()
+	{
+		if (this.checked== true)
+			this.checked = false;
+		else
+			this.checked = true;
+	} */
+	document.getElementById("firstChecked").onclick = 
+	function() {
+		if (this.checked== true)
+		{
+			for (i=0; i<checkLabels.length; i++)
+			{
+				document.forms[0].chx[i].checked = true;
+			}
+			document.getElementById("chkLabel").innerHTML = "Uncheck All";
+		}
+		else // it was unchecked
+		{
+			for (i=0; i<checkLabels.length; i++)
+			{
+				document.forms[0].chx[i].checked = false;
+			}
+			document.getElementById("chkLabel").innerHTML = "Check All";
+		}
+	}
+}	
+	
+</script>
+</head>
+
+<body>
+	<form>
+	<input type="checkbox" name="firstChecked" id="firstChecked"><label id="chkLabel">Check All</label><br />
+	
+	<!--first<input type="checkbox" name="chx" id="chk1" value="first">
+	second<input type="checkbox" name="chx" id="chk2" value="second">
+	third<input type="checkbox" name="chx" id="chk3" value="third">
+	fourth<input type="checkbox" name="chx" id="chk4" value="fourth"> -->
+	
+	<div style = 'padding-left:20px;'>	
+	<script language="javascript">
+	
+	for (i=0; i<checkLabels.length; i++)
+	{
+		document.write ( 
+			'<input type="checkbox" name="chx" id="chk' + (i+1) + '" value="' + checkLabels[i] + '">' +
+			checkLabels[i] + '<br />');
+		//alert (checkLabels[i] + 
+		//	'<input type="checkbox" name="chx" //id="chk' + (i+1) + '"value="' + //checkLabels[i] + '">');
+	}
+	
+	</script>
+		</div>
+</form>
+	
+	
+</body>
+</html>
