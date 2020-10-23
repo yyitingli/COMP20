@@ -76,7 +76,7 @@
 			var qty = info[i].split("=")[1];
 			if(qty != 0){
 				description = menuItems[i%6].name;
-				eachCost = menuItems[i%6].cost;
+				eachCost = menuItems[i%6].cost.toFixed(2);
 				amount = info[i+1].split("=")[1]
 				order += "<tr><td>" +  qty + "</td>";
     			order += "<td>" + description + "</td>";
