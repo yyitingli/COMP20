@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="style.css">
+	<title>Receipt|Jade Delight</title>
+	<style>
+		tr:nth-child(even) {
+  			background-color: #dddddd;
+		}
+	</style>
+</head>
+<body>
+	
+	<h1 id = "h1"style="color:#df9f9f;"> </h1>
+	<hr/>
+
+	<div id = "time">
+		
+	</div>
+
+	<div id = "order">
+
+	</div>
+
+	<div id = "total">
+
+	</div>
+
+	
+
+	<script language="javascript">
+
+		function MenuItem(name, cost)
+		{
+			this.name = name;
+			this.cost=cost;
+		}
+
+		menuItems = new Array(
+			new MenuItem("Chicken Chop Suey", 4.5),
+			new MenuItem("Sweet and Sour Pork", 6.25),
+			new MenuItem("Shrimp Lo Mein", 5.25),
+			new MenuItem("Moo Shi Chicken", 6.5),
+			new MenuItem("Fried Rice", 2.35)
+		);
+
+		var x = location.search.substring(1);
+		var info = x.split("&");
+		//write h1
+		document.getElementById("h1").innerHTML +="Hello " + info[0].split("=")[1] + " "+ info[1].split("=")[1] + ", Thank You For Your Order!";
+
+		//write delivered time or pick up time
+		var type = info[5].split("=")[1];
+		var time = "";
+		if(type == "pickup"){
+
+			time = "<p><b>Estimate Pickup Time:&nbsp; </b>"+ Date(Date() + 15*60000) +"</p>";
+			
+		}else{
+			time = "<p><b>Estimate Delivery Time:&nbsp; </b>" + Date(Date() + 30*60000)+" </p>";
+
+		}
+		document.getElementById("time").innerHTML += time;
+
+
+		//write order detail
+		var order = `<table>
+					<tr>
+   						<th>Qty</th>
+    					<th>Description</th>
+    					<th>Cost Each($)</th>
+    					<th>Amount($)</th>
+  					</tr>
+				`
+		for(var i = 6; i <= 14 ; i += 2){
+			var qty = info[i].split("=")[1];
+			if(qty != 0){
+				description = menuItems[i%6].name;
+				eachCost = menuItems[i%6].cost;
+				amount = info[i+1].split("=")[1]
+				order += "<tr><td>" +  qty + "</td>";
+    			order += "<td>" + description + "</td>";
+    			order += "<td>" + eachCost + "</td>";
+    			order += "<td>" + amount+ "</td></tr>";
+  					
+			}
+		}
+		order+= "</table>"
+
+
+
+		document.getElementById("order").innerHTML += order;
+
+
+		//write total
+		var total = info[18].split("=")[1];
+		var subtotal = info[16].split("=")[1];
+		var tax = info[17].split("=")[1];
+
+		var info_total = "<p> <b>Subtotal: &nbsp; </b> $" + subtotal + " </p>";
+		info_total += "<p> <b>Mass tax 6.25%: &nbsp;</b>$ " + tax + " </p>";
+		info_total += "<p> <b>Total: &nbsp;</b> $" + total + " </p>";
+		document.getElementById("total").innerHTML += info_total;
+		/*
+		0?fname=
+		1&lname=Li
+		2&street=
+		3&city=
+		4&phone=9712821261
+		5&p_or_d=pickup
+		6&quan0=0
+		7&cost=
+		8&quan1=0
+		9&cost=
+		10&quan2=0
+		11&cost=
+		12&quan3=0
+		13&cost=
+		14&quan4=0
+		15&cost=
+		16&subtotal=
+		17&tax=
+		18&total=
+		*/
+
+		
+
+	</script>
+
+
+
+
+</body>
+</html>
+
+
