@@ -9,33 +9,8 @@
 	{"Artist": "Blackpink", "Title":"DDU-DU DDU-DU", "Genre" : "K-Pop", "release_year": 2018},
 	{"Artist": "Kim Tae-yeon", "Title":"I", "Genre" : "R&B", "release_year": 2015},
 	{"Artist": "Hwasa", "Title":"Maria", "Genre" : "K-Pop", "release_year": 2020},
-	{"Artist": "Hyolyn", "Title":"ONE WAY LOVE", "Genre" : "R&B", "release_year": 2015},]
+	{"Artist": "Hyolyn", "Title":"ONE WAY LOVE", "Genre" : "R&B", "release_year": 2013},]
 }
 
 
 
-      <song id="0001007">
-          <artist>Hwasa</artist>
-          <title>Maria</title>
-          <genre>K-Pop</genre>
-          <release_year> 2020 </release_year>
-      </song>
-      <song id="0001008">
-          <artist>LYn</artist>
-          <title>My Destiny</title>
-          <genre>K-Pop</genre>
-          <release_year> 2015 </release_year>
-      </song>
-      <song id="0001009">
-          <artist>Hyolyn</artist>
-          <title>ONE WAY LOVE</title>
-          <genre>R&amp;B</genre>
-          <release_year> 2013 </release_year>
-      </song>
-      <song id="0001010">
-          <artist>Luna</artist>
-          <title>Free Somebody</title>
-          <genre>Electropop</genre>
-          <release_year> 2016 </release_year>
-      </song>
-   </song_list>
