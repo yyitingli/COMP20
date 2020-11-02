@@ -1,10 +1,12 @@
 h1,h2,h3,h4,h5,h6{
 	font-family: 'Open Sans', Sans Serif;
 	font-weight: 600;
+	color:#404040;
 }
 
 div{
 	font-family:  'Open Sans';
+	font-size: 20px;
 }
 
 h1{
@@ -15,10 +17,6 @@ h2{
 	color:#df9f9f;
 }
 
-p{
-	font-size: 20px;
-}
-
 
 body{
 	font-family: 'Open Sans', Sans Serif;
@@ -26,4 +24,23 @@ body{
 	-webkit-font-smoothing: antialiased;
 	margin-left: 10%;
 	margin-right: 10%;
+}
+
+select{
+  	font-family: inherit;
+  	width: 40%;
+  	font-size: 20px;
+	border: 10%;
+  	border-bottom: 2px solid ;
+  	color: #262626;
+  	margin-bottom: 1%;
+}
+
+button{
+	color: white;
+  	font: Sans Serif;
+  	font-size: 20px;
+  	background-color: #262626;
+  	width: 8%;
+  	box-sizing: border-box;
 }
