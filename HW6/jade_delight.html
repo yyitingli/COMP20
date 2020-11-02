@@ -38,7 +38,8 @@
 		$("p.hidden").hide();
 		$("input[name = 'lname']").prop("required", "true");
 	    $("input[name = 'phone']").prop("required", "true");
-	    
+	    $("form").attr("action", "receipt.html");
+	    $("form").attr("methid", "get");
 	});
 
 	$(function() {
@@ -50,21 +51,21 @@
 	       		$("p.hidden").show();
 	       		$("input[name = 'street']").prop("required", "true");
 	       		$("input[name = 'city']").prop("required", "true");
+	       		$("input[name = 'street']").prop("required", "true");
+	       		$("input[name = 'city']").prop("required", "true");
 	    	}
 	   	});
 	 });
 
 
 	function validation(){
-		if(validate_phone()){
-			return true;
-		}
-		return false;
+		return validate_phone();
 
 	}
 	function validate_phone(){
   		var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-  		if(document.forms["myForm"]["phone"].value.match(phoneno)){
+  		var phone = $("input[name='phone']").val();
+  		if(phone.match(phoneno)){
       		return true;
   		}
   		alert("Invalid Phone Number!!!");
@@ -75,7 +76,7 @@
 	</script>
 
 	<h1 style="color:#df9f9f;font-size: 40px; margin-left: 25%">Jade Delight</h1>
-	<form name='myForm' onsubmit="return validation();" action='receipt.html' method= 'get'>
+	<form  onsubmit="return validation();" >
 
 		<p>First Name: &nbsp;<input type="text"  name='fname' /></p>
 		<p>Last Name*:  <input type="text"  name='lname' /></p>
