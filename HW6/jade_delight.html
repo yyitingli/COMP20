@@ -36,6 +36,8 @@
 
 	$(document).ready(function(){
 		$("p.hidden").hide();
+		$("input[name = 'lname']").prop("required", "true");
+	    $("input[name = 'phone']").prop("required", "true");
 	    
 	});
 
@@ -76,10 +78,10 @@
 	<form name='myForm' onsubmit="return validation();" action='receipt.html' method= 'get'>
 
 		<p>First Name: &nbsp;<input type="text"  name='fname' /></p>
-		<p>Last Name*:  <input type="text"  name='lname' required/></p>
+		<p>Last Name*:  <input type="text"  name='lname' /></p>
 		<p class = 'hidden' >Street*:&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; <input type="text"  name='street' /></p>
 		<p class = 'hidden'>City*: &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  name='city' /></p>
-		<p>Phone*: &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;<input type="text"  name='phone' required /></p>
+		<p>Phone*: &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;<input type="text"  name='phone'  /></p>
 		<p> 
 			<input type="radio"  name="p_or_d"  value = "pickup" checked="checked" />Pickup  
 			<input type="radio"  name='p_or_d'  value = 'delivery' />
