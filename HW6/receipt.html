@@ -52,12 +52,14 @@
 		//write delivered time or pick up time
 		var type = info[5].split("=")[1];
 		var time = "";
+		const t = new Date();
 		if(type == "pickup"){
-
-			time = "<p><b>Estimate Pickup Time:&nbsp; </b>"+ Date(Date() + 15*60000) +"</p>";
+		    t.setTime(t.getTime() + 15*60000);
+			time = "<p><b>Estimate Pickup Time:&nbsp; </b>"+ t +"</p>";
 			
 		}else{
-			time = "<p><b>Estimate Delivery Time:&nbsp; </b>" + Date(Date() + 30*60000)+" </p>";
+			t.setTime(t.getTime() + 30*60000);
+			time = "<p><b>Estimate Delivery Time:&nbsp; </b>" + t +" </p>";
 
 		}
 		document.getElementById("time").innerHTML += time;
