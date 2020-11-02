@@ -103,20 +103,21 @@
 				form += "<button id =\"btn\" type = 'button'>Filter</button></form>";
 				document.getElementById("part_4").innerHTML = form;
 				document.getElementById("list").innerHTML = songlist;
+
+				$(function() {
+				    $("#btn").click(function() {
+				    	type = document.getElementById("Genres").value;
+						filtered_list = genre_filter(type);
+						document.getElementById("list").innerHTML = filtered_list;
+				   	
+				 	});
+				});
 				
 			}	
-		)
-		$(function() {
-		    $("#btn").click(function() {
-		    	type = document.getElementById("Genres").value;
-				filtered_list = genre_filter(type);
-				document.getElementById("list").innerHTML = filtered_list;
-		   	
-		 	});
-		});
 
+		)
 		
-		
+
 		
 	</script>
 
