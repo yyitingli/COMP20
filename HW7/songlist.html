@@ -12,33 +12,58 @@
 
 	<h1>Songlist</h1>
 	<h2>Part 2</h2>
+
 	<script language="javascript">
+		function makeSelect(name, array )
+		{
+			var t= "";
+			t = "<select name='" + name + "' >";
+			array.forEach(function(genre) { 
+			   t += "<option>" + j + "</option>";
+			})
+			t+= "</select>"; 
+			return t;
+		}
 		$.get( "https://yyitingli.github.io/COMP20/HW7/songlist.json", 
 			function( data ) {
 				json_str = JSON.stringify(data);
 				document.getElementById("part_2").innerHTML = json_str;
-			}
-		)
-	</script>
-	<script language="javascript">
-		$.get("https://yyitingli.github.io/COMP20/HW7/songlist.json", 
-			function( data ) {
-				json_str = JSON.stringify(data);
 				songlist= "";
+				genre_list = [];
 				data.forEach(function(song) { 
 					songlist += "<b>" + song.Title + "</b> </br>"
 				    +  "Artist: " + song.Artist + "</br>"
-				    +  "Genre:"  + song.Genre + "</br>"
-				    +  "Released " + song.release_year + "</br>"
+				    +  "Genre:" ;
+				    genre_str = "";
+				    song.Genre.forEach(function(genre) { 
+				    	genre_str += genre + ", ";
+				    	if(genre_list.includes(genre) == false){
+				    		genre_list.push(genre);
+				    	}
+				    })
+				    songlist += genre_str.substring(0, genre_str.length-2);
+				    songlist += "</br>"
+				 	+  "Released " + song.release_year + "</br>"
 					+ "</br>";
 				}) 
 				songlist += "</ul>";
-				 document.getElementById("part_3").innerHTML = songlist;  
-		})
+				 document.getElementById("part_3").innerHTML = songlist;
+			}
+		)
+		form = "<button onclick=\"myFunction()\" class=\"dropbtn\">Filter</button>";
 	</script>
+
 
 	<div id = "part_2"></div>
 	<h2>Part 3</h2>
 	<div id = "part_3"></div>
+	<h2>Part 4</h2>
+	<div id = "part_4">
+		<form id = "songlist">
+
+
+		</form>
+	</div>
+
 </body>
 </html>
