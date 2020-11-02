@@ -26,12 +26,14 @@
 				json_str = JSON.stringify(data);
 				songlist= "";
 				data.forEach(function(song) { 
-					strHTML += "<li>" 
-				    + animal.name + " : " 
-					+ animal.type + "</li>";
+					songlist += "<b>" + song.Title + "</b> </br>"
+				    +  "Artist: " + song.Artist + "</br>"
+				    +  "Genre:"  + song.Genre + "</br>"
+				    +  "Released " + song.release_year + "</br>"
+					+ "</br>";
 				}) 
-				strHTML += "</ul>";
-				document.write (strHTML);  
+				songlist += "</ul>";
+				 document.getElementById("part_3").innerHTML = songlist;  
 		})
 	</script>
 
