@@ -5,7 +5,7 @@
 	<meta charset="utf-8"/>
 	<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous">
 		$("#btn").click(function(){
-  			alert(1);
+  			alert("yes");
 		});
 		
 	</script>
@@ -18,9 +18,7 @@
 	<h1>Songlist</h1>
 	<h2>Part 2</h2>
 	<div id = "part_2"></div>
-	<h2>Part 3 </h2>
-	<div id = "part_3"></div>
-	<h2>Part 4 </h2>
+	<h2>Part 3/4 </h2>
 	<div id = "part_4"></div>
 	<div id = "list"></div>
 
@@ -36,20 +34,23 @@
 			return t;
 		}
 		
-		genre_list = [];
+		genre_list = ["ALL"];
 
 		function filter()
 		{
 			type = document.getElementById("Genres").value;
+
 			filtered_list = genre_filter(type);
+			alert(filtered_list);
 			document.getElementById("list").innerHTML = filtered_list;
 
 		}
 
 		function genre_filter(type){
 			list = ""
+			
 			temp.forEach(function(song) { 
-				if(song.Genre.includes(type)){
+				if( type == "ALL" || song.Genre.includes(type) ){
 					/* display title, artist*/
 					list += "<b>" + song.Title + "</b> </br>"
 				    +  "Artist: " + song.Artist + "</br>"
@@ -67,8 +68,9 @@
 				    list += "</br>" +  "Released " + song.release_year + "</br></br>";
 				}
 			}) 
-			return type;
+			return list;
 		}
+		
 
 		$.get( "https://yyitingli.github.io/COMP20/HW7/songlist.json", 
 			function( data ) {
@@ -102,12 +104,22 @@
 				/* Part 4: Filter the data */
 				form = "<form> ";
 				form += makeSelect("Genres", genre_list);
-				form += "<button id =\"btn\">Filter</button></form>";
+				form += "<button id =\"btn\" type = 'button'>Filter</button></form>";
 				document.getElementById("part_4").innerHTML = form;
-				document.getElementById("part_3").innerHTML = songlist;
+				document.getElementById("list").innerHTML = songlist;
 				
-			}
+			}	
 		)
+		$(function() {
+		    $("#btn").click(function() {
+		    	type = document.getElementById("Genres").value;
+				filtered_list = genre_filter(type);
+				document.getElementById("list").innerHTML = filtered_list;
+		   	
+		 	});
+		});
+
+		
 		
 		
 	</script>
