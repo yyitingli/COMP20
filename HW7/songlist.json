@@ -1,5 +1,4 @@
-{
-  "KoreanMusic": [
+[
   	{"Artist": "LYn", "Title":"My Destiny", "Genre" : "K-Pop", "release_year": 2015},
   	{"Artist": "IU", "Title":"Bbibbi", "Genre" : "Alt-R&B", "release_year": 2018},
   	{"Artist": "Kim Hyun-a", "Title":"Flower Shower", "Genre" : "K-Pop", "release_year": 2019},
@@ -9,8 +8,9 @@
 	{"Artist": "Blackpink", "Title":"DDU-DU DDU-DU", "Genre" : "K-Pop", "release_year": 2018},
 	{"Artist": "Kim Tae-yeon", "Title":"I", "Genre" : "R&B", "release_year": 2015},
 	{"Artist": "Hwasa", "Title":"Maria", "Genre" : "K-Pop", "release_year": 2020},
-	{"Artist": "Hyolyn", "Title":"ONE WAY LOVE", "Genre" : "R&B", "release_year": 2013}]
-}
+	{"Artist": "Hyolyn", "Title":"ONE WAY LOVE", "Genre" : "R&B", "release_year": 2013}
+]
+
 
 
 
