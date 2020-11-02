@@ -11,19 +11,19 @@
 
 <body>
 	<script language="javascript">
-	$.get( "http://www.secretcheese.com/comp20/demo/animals.json", 
-		  function( data ) {
-			str = JSON.stringify(data);
-			document.write(str);
-			strHTML= "";
-		/*data.forEach(function(animal) { 
-		strHTML += "<li>" 
-			    + animal.name + " : " 
-				+ animal.type + "</li>";
-			}) 
-	strHTML += "</ul>";
-	document.write (strHTML);  */
-	})
-</script>
+		$.get( "http://www.secretcheese.com/comp20/demo/animals.json", 
+			  function( data ) {
+				str = JSON.stringify(data);
+				document.write(str);
+				strHTML= "";
+				data.forEach(function(animal) { 
+					strHTML += "<li>" 
+				    + animal.name + " : " 
+					+ animal.type + "</li>";
+				}) 
+				strHTML += "</ul>";
+				document.write (strHTML);  
+		})
+	</script>
 </body>
 </html>
