@@ -41,10 +41,10 @@
 
 	$(function() {
 	    $("input[name='p_or_d']").click(function() {
-	    	if ($("#pickup").is(":checked")) {
+	    	if ($("input[name='p_or_d']:checked").val() == "pickup") {
 	    		$("p.hidden").hide();
 	    	} 
-	    	if($("#delivery").is(":checked")) {
+	    	else {
 	       		$("p.hidden").show();
 	       		$("input[name = 'street']").prop("required", "true");
 	       		$("input[name = 'city']").prop("required", "true");
@@ -81,8 +81,8 @@
 		<p class = 'hidden'>City*: &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  name='city' /></p>
 		<p>Phone*: &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;<input type="text"  name='phone' required /></p>
 		<p> 
-			<input type="radio"  name="p_or_d" id = "pickup" value = "pickup" checked="checked" />Pickup  
-			<input type="radio"  name='p_or_d' id = 'delivery' value = 'delivery' />
+			<input type="radio"  name="p_or_d"  value = "pickup" checked="checked" />Pickup  
+			<input type="radio"  name='p_or_d'  value = 'delivery' />
 			Delivery
 		</p>
 
