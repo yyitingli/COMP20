@@ -3,7 +3,12 @@
 <head>
 	<title>songlist</title>
 	<meta charset="utf-8"/>
-	<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+	<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous">
+		$("#btn").click(function(){
+  			alert(1);
+		});
+		
+	</script>
 	<link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,29 +17,75 @@
 
 	<h1>Songlist</h1>
 	<h2>Part 2</h2>
+	<div id = "part_2"></div>
+	<h2>Part 3 </h2>
+	<div id = "part_3"></div>
+	<h2>Part 4 </h2>
+	<div id = "part_4"></div>
+	<div id = "list"></div>
 
 	<script language="javascript">
-		function makeSelect(name, array )
+		function makeSelect(id, array )
 		{
 			var t= "";
-			t = "<select name='" + name + "' >";
-			array.forEach(function(genre) { 
-			   t += "<option>" + j + "</option>";
+			t = "<select id='" + id + "'>";
+			array.forEach(function(genre) {
+			   t += "<option>" + genre + "</option>";
 			})
 			t+= "</select>"; 
 			return t;
 		}
+		
+		genre_list = [];
+
+		function filter()
+		{
+			type = document.getElementById("Genres").value;
+			filtered_list = genre_filter(type);
+			document.getElementById("list").innerHTML = filtered_list;
+
+		}
+
+		function genre_filter(type){
+			list = ""
+			temp.forEach(function(song) { 
+				if(song.Genre.includes(type)){
+					/* display title, artist*/
+					list += "<b>" + song.Title + "</b> </br>"
+				    +  "Artist: " + song.Artist + "</br>"
+				    +  "Genre:" ;
+				    genre_str = "";
+				    /* display genres */
+				    song.Genre.forEach(function(genre) { 
+				    	genre_str += genre + ", ";
+				    	if(genre_list.includes(genre) == false){
+				    		genre_list.push(genre);
+				    	}
+				    })
+				    list += genre_str.substring(0, genre_str.length-2);
+				    /* display released year */
+				    list += "</br>" +  "Released " + song.release_year + "</br></br>";
+				}
+			}) 
+			return type;
+		}
+
 		$.get( "https://yyitingli.github.io/COMP20/HW7/songlist.json", 
 			function( data ) {
+				/* Part 2: Serialize and display */
 				json_str = JSON.stringify(data);
 				document.getElementById("part_2").innerHTML = json_str;
+
+				/* Part 3: User friendly display  */
 				songlist= "";
-				genre_list = [];
+				temp = data;
 				data.forEach(function(song) { 
+					/* display title, artist*/
 					songlist += "<b>" + song.Title + "</b> </br>"
 				    +  "Artist: " + song.Artist + "</br>"
 				    +  "Genre:" ;
 				    genre_str = "";
+				    /* display genres */
 				    song.Genre.forEach(function(genre) { 
 				    	genre_str += genre + ", ";
 				    	if(genre_list.includes(genre) == false){
@@ -42,28 +93,27 @@
 				    	}
 				    })
 				    songlist += genre_str.substring(0, genre_str.length-2);
-				    songlist += "</br>"
-				 	+  "Released " + song.release_year + "</br>"
-					+ "</br>";
+				    /* display released year */
+				    songlist += "</br>" +  "Released " + song.release_year + "</br></br>";
 				}) 
+				
 				songlist += "</ul>";
-				 document.getElementById("part_3").innerHTML = songlist;
+
+				/* Part 4: Filter the data */
+				form = "<form> ";
+				form += makeSelect("Genres", genre_list);
+				form += "<button id =\"btn\">Filter</button></form>";
+				document.getElementById("part_4").innerHTML = form;
+				document.getElementById("part_3").innerHTML = songlist;
+				
 			}
 		)
-		form = "<button onclick=\"myFunction()\" class=\"dropbtn\">Filter</button>";
+		
+		
 	</script>
 
 
-	<div id = "part_2"></div>
-	<h2>Part 3</h2>
-	<div id = "part_3"></div>
-	<h2>Part 4</h2>
-	<div id = "part_4">
-		<form id = "songlist">
-
-
-		</form>
-	</div>
+	
 
 </body>
 </html>
