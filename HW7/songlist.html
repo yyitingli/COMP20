@@ -4,6 +4,7 @@
 	<title>songlist</title>
 	<meta charset="utf-8"/>
 	<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="style.css">
 </head>
 
 
@@ -15,14 +16,27 @@
 		$.get( "https://yyitingli.github.io/COMP20/HW7/songlist.json", 
 			function( data ) {
 				json_str = JSON.stringify(data);
-				alert(json_str)
 				document.getElementById("part_2").innerHTML = json_str;
 			}
 		)
 	</script>
+	<script language="javascript">
+		$.get("https://yyitingli.github.io/COMP20/HW7/songlist.json", 
+			function( data ) {
+				json_str = JSON.stringify(data);
+				songlist= "";
+				data.forEach(function(song) { 
+					strHTML += "<li>" 
+				    + animal.name + " : " 
+					+ animal.type + "</li>";
+				}) 
+				strHTML += "</ul>";
+				document.write (strHTML);  
+		})
+	</script>
 
-	<div id = "part_2">
-
-	</div>
+	<div id = "part_2"></div>
+	<h2>Part 3</h2>
+	<div id = "part_3"></div>
 </body>
 </html>
