@@ -10,26 +10,23 @@
            }
     </style>
 	<script>
+		// USE get_weather_ajax - posted.html file us reference
 		function getCovidStat() {
-			/* Step 1: Make instance of request object...
-			...to make HTTP request after page is loaded*/
 			request = new XMLHttpRequest();
 			console.log("1 - request object created");
- 
-			// Step 2: Set the URL for the AJAX request to be the JSON file
  
 		request.open("GET", "https://api.covidtracking.com/v1/states/current.json", true)
 
 			console.log("2 - opened request file");
  
-			// Step 3: set up event handler/callback
-
+			
+			// set up event handler
 			request.onreadystatechange = function() {
 				console.log("3 - readystatechange event fired.");
  
 				if (request.readyState == 4 && request.status == 200) {
 
-					// Step 5: wait for done + success
+					//print the data after successful requst
 					console.log("5 - response received");
 					result = request.responseText;
 					statistic = JSON.parse(result);
