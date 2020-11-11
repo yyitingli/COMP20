@@ -7,33 +7,29 @@
             a {text-decoration:none;}
 
         </style>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     </head>
     <body>
+        <script type="text/javascript">
+            alert("1" + document.getElementsByName('number').value);
+            //alert("2" + document.getElementById('#num1').value);
+            alert("3" + document.form1.number.value);
+            alert("4" + $('#num1').val());
+            //alert("5" + document.getElementById('num1').value);
+            alert("6" + $('.num1').val());
+            alert("7" + document.getElementById('#num1').val);
+
+
+        </script>
         This is my web Page
         <p> here is a paragraph </p>
-        <a href="https://www.amazon.com"  target =  '_blank'>Go to Amazon</a>
-        <br/>
-        <a href="Demo0916_2.html"> Go to Demo </a>
-        <br/>
+       <form name='abc'>
+        Enter: <input type='text' name='number' id='num1' value = "amber">
+        <input type = 'submit' value='submit'>
+        </form>
 
-        <p> high resolution picture site:
-            <a href="http://unsplash.com"> Unsplash</a>&nbsp;&nbsp;&nbsp;
-            <a href="http://bigstockphoto.com"> Bigstock </a>
-        </p>
 
-        <p> resize picture site:
-            <a href="http://Brime.net"> Brime</a>&nbsp;&nbsp;&nbsp;
-        </p>
 
-        <br/> <br/>
-        <a href = 'tel:555-555-5555'>Call ME!</a>
-        <br
-
-        <hr/>
-            <image src = 'image\Corgi.JPG'></image>
-        <hr/>
-        <a href="#"> About Us </a> &nbsp;&nbsp;&nbsp;
-        <a href="#">Contact </a> &nbsp;&nbsp;&nbsp;
 
     </body>
 </html>
