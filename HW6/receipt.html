@@ -74,11 +74,12 @@
     					<th>Amount($)</th>
   					</tr>
 				`
+		var k = 0;
 		for(var i = 6; i <= 14 ; i += 2){
 			var qty = info[i].split("=")[1];
 			if(qty != 0){
-				description = menuItems[i%6].name;
-				eachCost = menuItems[i%6].cost.toFixed(2);
+				description = menuItems[k].name;
+				eachCost = menuItems[k].cost.toFixed(2);
 				amount = info[i+1].split("=")[1]
 				order += "<tr><td>" +  qty + "</td>";
     			order += "<td>" + description + "</td>";
@@ -86,6 +87,7 @@
     			order += "<td>" + amount+ "</td></tr>";
   					
 			}
+			k++;
 		}
 		order+= "</table>"
 
