@@ -36,7 +36,7 @@
 				<script language="javascript">
 					const t = new Date();
 					t.setTime(t.getTime() + 30*60000);
-					time = "<p><b>Estimate Pickup Time:&nbsp; </b>"+ t +"</p>";
+					time = "<p><b>Estimate Delivery Time:&nbsp; </b>"+ t +"</p>";
 					document.writeln(time);
 				</script>
 			<?php
