@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="style.css">
+<title>Jade Delight</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+	<script language="javascript">
+
+	function MenuItem(name, cost)
+	{
+		this.name = name;
+		this.cost=cost;
+	}
+
+	menuItems = new Array(
+		new MenuItem("Chicken Chop Suey", 4.5),
+		new MenuItem("Sweet and Sour Pork", 6.25),
+		new MenuItem("Shrimp Lo Mein", 5.25),
+		new MenuItem("Moo Shi Chicken", 6.5),
+		new MenuItem("Fried Rice", 2.35)
+	);
+
+	function makeSelect(name, minRange, maxRange)
+	{
+		var t= "";
+		t = "<select name='" + name + "' size='1' onchange='CalcTotal()'>";
+		for (j=minRange; j<=maxRange; j++)
+		   t += "<option>" + j + "</option>";
+		t+= "</select>"; 
+		return t;
+	}
+
+	$(document).ready(function(){
+		$("p.hidden").hide();
+		$("input[name = 'lname']").prop("required", "true");
+	    $("input[name = 'phone']").prop("required", "true");
+	    $("form").attr("action", "receipt.php");
+	    $("form").attr("method", "POST");
+	});
+
+	$(function() {
+	    $("input[name='p_or_d']").click(function() {
+	    	if ($("input[name='p_or_d']:checked").val() == "pickup") {
+	    		$("p.hidden").hide();
+	    	} 
+	    	else {
+	       		$("p.hidden").show();
+	       		$("input[name = 'street']").prop("required", "true");
+	       		$("input[name = 'city']").prop("required", "true");
+	       		$("input[name = 'street']").prop("required", "true");
+	       		$("input[name = 'city']").prop("required", "true");
+	    	}
+	   	});
+	 });
+
+
+	function validation(){
+		return validate_phone();
+
+	}
+	function validate_phone(){
+  		var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+  		var phone = $("input[name='phone']").val();
+  		if(phone.match(phoneno)){
+      		return true;
+  		}
+  		alert("Invalid Phone Number!!!");
+        
+        return false;
+	}
+
+	</script>
+
+	<h1 style="color:#df9f9f;font-size: 40px; margin-left: 25%">Jade Delight</h1>
+	<form  onsubmit="return validation();" >
+
+		<p>First Name: &nbsp;<input type="text"  name='fname' /></p>
+		<p>Last Name*:  <input type="text"  name='lname' /></p>
+		<p class = 'hidden' >Street*:&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; <input type="text"  name='street' /></p>
+		<p class = 'hidden'>City*: &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  name='city' /></p>
+		<p>Phone*: &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;<input type="text"  name='phone'  /></p>
+		<p> 
+			<input type="radio"  name="p_or_d"  value = "pickup" checked="checked" />Pickup  
+			<input type="radio"  name='p_or_d'  value = 'delivery' />
+			Delivery
+		</p>
+
+		<table border="0" cellpadding="3">
+			  <tr>
+			    <th>Select Item</th>
+			    <th>Item Name</th>
+			    <th>Cost Each</th>
+			    <th>Total Cost</th>
+			  </tr>
+			<script language="javascript">
+				
+				function itemCost(index){
+			  		cost = document.getElementsByName('cost'+index);
+			  		quantity = document.getElementsByName('quan'+index);
+			  		totalCost= (quantity[0].value * menuItems[index].cost).toFixed(2);
+			  		if(totalCost > 0){
+			  			cost[0].value = totalCost;
+			  		}else if(cost[0].value > 0){
+			  			cost[0].value = 0;
+			  		}
+			  		return parseFloat(totalCost);
+			  		
+
+				}
+			  	
+				function CalcTotal(){
+					var subtotal = 0;
+			  		for(var i = 0; i < menuItems.length; i++){
+			  			subtotal += itemCost(i);
+			  		}
+			  		document.getElementById('subtotal').value = subtotal.toFixed(2);
+			  		document.getElementById('tax').value = (subtotal * .0625).toFixed(2);
+			  		document.getElementById('total').value = (subtotal * 1.0625).toFixed(2);
+
+				}
+
+			  	var s = "";
+			  	for (i=0; i< menuItems.length; i++)
+			  	{
+				  	s += "<tr><td>";
+				  	s += makeSelect("quan" + i, 0, 10);
+				  	s += "</td><td>" + menuItems[i].name + "</td>";
+				  	s += "<td> $ " + menuItems[i].cost.toFixed(2) + "</td>";
+				  	s +="<td>$&nbsp;<input type='text' name='cost"+ i +"' style = 'width: 80%;' /></td></tr>";
+			  	}
+			  	document.writeln(s);
+			</script>
+		</table>
+		<p>Subtotal: 
+			&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	   		$&nbsp;<input type="text"  name='subtotal' id="subtotal" style = 'width : 30%' value =0 />
+		</p>
+		<p>Mass tax 6.25%:
+	  		$&nbsp; <input type="text"  name='tax' id="tax" style = 'width : 30%' value = 0 />
+		</p>
+		<p>
+			Total: &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			$&nbsp; <input type="text"  name='total' id="total" style = 'width : 30%'  value =0 />
+		</p>
+
+		<input type = "submit" value = "Submit Order" />
+
+	</form>
+</body>
+</html>
