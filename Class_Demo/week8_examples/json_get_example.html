@@ -16,6 +16,7 @@
 				str = JSON.stringify(data);
 				document.write(str);
 				strHTML= "";
+
 				data.forEach(function(animal) { 
 					strHTML += "<li>" 
 				    + animal.name + " : " 
@@ -23,7 +24,25 @@
 				}) 
 				strHTML += "</ul>";
 				document.write (strHTML);  
+				students =[
+		  {'name': 'joe',
+		   'grade': 66,
+		   'status': 'enrolled'
+		  },
+		  {
+		   'name': 'jill',
+		   'grade': 77,
+		   'status': 'enrolled'
+		  }
+		 ]
+  		
+		 students[1].grade = 100;
+		 s1 = JSON.stringify(students);
+		 document.write(s1);
+		 s2 = JSON.parse(s1);
 		})
-	</script>
+
+		
+</script>
 </body>
 </html>
