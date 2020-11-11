@@ -36,6 +36,7 @@
 
 	$(document).ready(function(){
 		$("p.hidden").hide();
+		$("#time").hide();
 		$("input[name = 'lname']").prop("required", "true");
 	    $("input[name = 'phone']").prop("required", "true");
 	    $("form").attr("action", "receipt.php");
@@ -59,7 +60,32 @@
 
 
 	function validation(){
-		return validate_phone();
+		setTime();
+		return (validate_phone() && validate_email());
+	}
+
+	function setTime(){
+		const time = new Date();
+		if ($("input[name='p_or_d']:checked").val() == "pickup") {
+			time.setTime(time.getTime() + 15*60000);
+	    } 
+	    else {
+	       	time.setTime(time.getTime() + 30*60000);	
+	    }
+		document.getElementById('time').value = time;
+	}
+
+	function validate_email(){
+		var validemail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+		var email = $("input[name='email']").val();
+		if(email.match(validemail)){
+			return true;
+		}
+
+		alert("Invalid Email!!!");
+
+		return false;
+
 
 	}
 	function validate_phone(){
@@ -83,6 +109,8 @@
 		<p class = 'hidden' >Street*:&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; <input type="text"  name='street' /></p>
 		<p class = 'hidden'>City*: &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  name='city' /></p>
 		<p>Phone*: &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;<input type="text"  name='phone'  /></p>
+		<p>Email*: &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;<input type="text"  name='email'  required/></p>
+		<input type="hidden" name="time" id="time" />
 		<p> 
 			<input type="radio"  name="p_or_d"  value = "pickup" checked="checked" />Pickup  
 			<input type="radio"  name='p_or_d'  value = 'delivery' />
