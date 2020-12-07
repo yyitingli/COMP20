@@ -1,5 +1,6 @@
 var http = require('http');
 var url = require('url');
+var port = process.env.PORT || 3000;
 
 const MongoClient = require('mongodb').MongoClient;
 const db_url = "mongodb+srv://yyitingli:253718516@cluster0.6jyam.mongodb.net/?retryWrites=true&w=majority";
@@ -24,7 +25,7 @@ http.createServer(function(req, res) {
         res.end( result  );
     });
 
-}).listen(8080);
+}).listen(port);
 
 
 
@@ -69,7 +70,7 @@ async function find(type, input, query) {
                 setTimeout(function() {
                     i = 1;
                     answer.forEach(function(item) {
-                        results += "<h4>"+ type + " " + i + ": " + item[t1] + "\n" + "</h4>";
+                        results += "<h4>"+ t1 + " " + i + ": " + item[t1] + "\n" + "</h4>";
                         i++;
                     });
                     resolve(results );
