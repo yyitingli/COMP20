@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<title>Stock Ticker Mapping App</title>
+</head>
+
+<body>
+    <form action="http://localhost:8080" method='get'>
+    <h1>Stock Ticker Mapping App</h1>
+
+    <fieldset>
+    <legend><span class="number">1</span>Type</legend>
+    <label>Type</label>
+    <input type="radio" id="Company" value="Company"  name="type" required><label for='Company' class="light" >COMPANY NAME</label><br/>
+    <input type="radio" id="Ticker" value="Ticker" name="type"><label for="Ticker" class="light"  >STOCK TICKER</label>
+  </fieldset>
+
+  <fieldset>
+    <legend><span class="number">2</span> Your profile</legend>
+    <label for="input" >Company Name/ Stock Ticker:</label>
+    <input type="text" id="input" name="input" required="required">
+  </fieldset>
+
+  
+  
+  <button type="submit">Submit</button>
+
+</form>
+</body>
+</html>
