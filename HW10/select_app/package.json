@@ -1,0 +1,23 @@
+{
+  "name": "selectapp",
+  "version": "1.0.0",
+  "description": "node app",
+  "main": "result.js",
+  "scripts": {
+  "start": "node result.js"
+},
+  "repository": {
+  "type": "git",
+  "url": ""
+},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+   "mongodb": "^3.3.0-beta2"
+       
+},
+  "bugs": {
+  "url": ""
+},
+  "homepage": ""
+}
